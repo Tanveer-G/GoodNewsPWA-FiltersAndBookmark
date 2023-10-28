@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+html {
+  font-size: 62.5%;
+  /* color-scheme: dark light; */
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  font-family: 'Montserrat', 'Times New Roman', serif, 'Sans-serif';
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  min-height: 100vh;
+  font-size: 1.6rem;
+  line-height: 1.625;
+  background: rgb(2, 0, 36);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background:
+    radial-gradient(farthest-side, #27cdd5 94%, #0000) top/9px 9px no-repeat,
+    conic-gradient(#0000 30%, #27cdd5);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+  animation: spinner 1s infinite linear;
+  mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+}
+
+@keyframes spinner {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.svgWhite {
+  filter: invert(100%) sepia(10%) saturate(2%) hue-rotate(180deg) brightness(110%) contrast(101%);
+}

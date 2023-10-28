@@ -1,0 +1,45 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended" // Make this the last element so prettier config overrides other formatting rules
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "jest": true,
+    "browser": true,
+    "amd": true,
+    "node": true,
+    "es6": true
+  },
+  "plugins": ["react", "jsx-a11y", "prettier-plugin-tailwindcss"],
+  "rules": {
+    "trailingComma": "es5",
+    "semi": 1,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "react/prop-types": "off", // Disable prop-types validation if using TypeScript
+    "react/react-in-jsx-scope": "off", // You don't need to import React in Next.js
+    "jsx-a11y/anchor-is-valid": "off", // Allow custom <Link> components in Next.js
+    "no-unused-vars": [
+      "error",
+      { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }
+    ],
+    "prettier/prettier": ["error", {}, { "usePrettierrc": true }]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
